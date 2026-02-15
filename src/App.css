@@ -259,6 +259,27 @@
   margin: 0 0 1rem;
 }
 
+.envelope-body--editable {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0;
+  background: none;
+  border: none;
+  border-bottom: 2px dashed var(--blue);
+  outline: none;
+  resize: none;
+  cursor: text;
+}
+
+.envelope-body--editable::placeholder {
+  color: var(--ink);
+  opacity: 0.35;
+}
+
+.envelope-body--editable:focus {
+  border-bottom-color: var(--ink);
+}
+
 .envelope-from {
   display: flex;
   align-items: center;
@@ -630,6 +651,85 @@
   text-align: center;
   margin: 0;
   padding-bottom: 1rem;
+}
+
+/* -- Received Banner -- */
+.received-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  background: var(--chartreuse);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+}
+
+.received-banner-icon {
+  font-size: 1.1rem;
+}
+
+/* -- Received Envelope Variant -- */
+.envelope--received {
+  border-color: var(--blue);
+}
+
+.envelope--received .stamp {
+  background: var(--pink);
+}
+
+.envelope--received .starburst {
+  background: var(--pink);
+}
+
+.envelope--received .starburst span {
+  color: white;
+}
+
+/* -- Send Own Button -- */
+.send-own-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+  background: var(--blue);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.send-own-btn:hover {
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: translate(-2px, -2px);
+}
+
+.send-own-btn:active {
+  transform: translate(0, 0);
+  box-shadow: none;
+}
+
+.send-own-icon {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+/* -- Disabled Share Button -- */
+.share-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 /* -- Global overrides for this app -- */
